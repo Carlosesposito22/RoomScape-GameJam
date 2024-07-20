@@ -12,6 +12,10 @@ Em RoomScape, você assume o papel de Erick, um jovem que enfrenta desafios emoc
 ## Tecnologias Usadas
 
 - Godoh
+
+## Itch.io
+
+- https://rafis03.itch.io/roomscape
   
 ## Como Jogar
 
