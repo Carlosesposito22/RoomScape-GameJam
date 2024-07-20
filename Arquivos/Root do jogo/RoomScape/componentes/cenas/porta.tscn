@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb0bni4676fkn"]
+
+[ext_resource type="Texture2D" uid="uid://bnyop2w7svp2o" path="res://Terreno/corredor segundo andar/porta.png" id="1_eyuej"]
+[ext_resource type="Script" path="res://componentes/cenas/porta.gd" id="1_yglyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwale"]
+size = Vector2(10, 2)
+
+[node name="porta" type="Area2D"]
+z_index = 2
+script = ExtResource("1_yglyc")
+_teleport_position = Vector2(100, 100)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, -16)
+scale = Vector2(1.08034, 1.05104)
+texture = ExtResource("1_eyuej")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 1)
+scale = Vector2(0.925925, 0.930145)
+shape = SubResource("RectangleShape2D_wwale")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

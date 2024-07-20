@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0do4lwjae4tn"]
+
+[ext_resource type="PackedScene" uid="uid://cenmdm60p6cqp" path="res://Terreno/cenas/terreno.tscn" id="1_toak3"]
+[ext_resource type="PackedScene" uid="uid://dx6medawlx6d6" path="res://Personagem/ERICK/personagem.tscn" id="2_sqakd"]
+[ext_resource type="PackedScene" uid="uid://ovnegbv0mikn" path="res://Levels/cenas_corredor/level_corredor.tscn" id="3_8brym"]
+[ext_resource type="PackedScene" uid="uid://bb0bni4676fkn" path="res://componentes/cenas/porta.tscn" id="4_mwmhj"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Terreno_casa" parent="." instance=ExtResource("1_toak3")]
+position = Vector2(88, 72)
+scale = Vector2(1.73643, 1.33253)
+layer_0/name = "casa"
+layer_0/tile_data = PackedInt32Array(0, 4, 0, -65536, 5, 0, 65535, 6, 0, -1, 10, 0)
+layer_1/tile_data = PackedInt32Array(-65535, 983049, 15, 1, 983049, 15, 65537, 983049, 15, 65536, 983049, 15, 131071, 983049, 15, 131070, 983049, 15, 65534, 983049, 15, -2, 983049, 15, -65538, 983049, 15, -65537, 983049, 15, -131072, 983049, 15, -131071, 983049, 15, 131073, 983049, 15, 131072, 983049, 15, 196607, 983049, 15, 196606, 983049, 15, 196605, 983049, 15, 131069, 983049, 15, 65533, 983049, 15, -3, 983049, 15, -65539, 983049, 15, -131075, 983049, 15, -131074, 983049, 15, -196608, 983049, 15, -196607, 983049, 15, -131073, 983049, 15)
+
+[node name="Erick" parent="." instance=ExtResource("2_sqakd")]
+position = Vector2(80, 80)
+scale = Vector2(1.89958, 1.62889)
+
+[node name="Level_corredor" parent="." instance=ExtResource("3_8brym")]
+position = Vector2(256, 24)
+
+[node name="Componentes" type="Node2D" parent="."]
+position = Vector2(8, -16)
+
+[node name="porta" parent="Componentes" instance=ExtResource("4_mwmhj")]
+position = Vector2(40, 48)

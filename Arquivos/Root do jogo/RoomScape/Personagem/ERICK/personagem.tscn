@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=3 uid="uid://dx6medawlx6d6"]
+
+[ext_resource type="Script" path="res://Personagem/ERICK/personagem.gd" id="1_03gnh"]
+[ext_resource type="Texture2D" uid="uid://bpbgdqbuynbd0" path="res://Sprites/pinto parker 1 (4).png" id="2_tv0fn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvme8"]
+size = Vector2(8, 4.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kjmi"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xwu4"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vg04"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(16, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f35s6"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(32, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln5a0"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(16, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihkj0"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(32, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpdp0"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(16, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3qvg"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(32, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sx4d"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(16, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2ifs"]
+atlas = ExtResource("2_tv0fn")
+region = Rect2(32, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iku8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kjmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xwu4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vg04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f35s6")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln5a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihkj0")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpdp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3qvg")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sx4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2ifs")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 5.0
+}]
+
+[node name="Erick" type="CharacterBody2D"]
+script = ExtResource("1_03gnh")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+shape = SubResource("RectangleShape2D_nvme8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(1, -5)
+sprite_frames = SubResource("SpriteFrames_iku8q")
+animation = &"idle"
